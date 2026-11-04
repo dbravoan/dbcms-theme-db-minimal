@@ -1,0 +1,16 @@
+{
+    "name": "dbravoan/dbcms-theme-db-minimal",
+    "type": "dbcms-theme",
+    "description": "Estética minimalista escandinava con líneas limpias, máxima legibilidad, paleta monocromática y generoso espacio negativo.",
+    "license": "MIT",
+    "require": {
+        "dbravoan/dbcms-core": "^4.0"
+    },
+    "extra": {
+        "dbcms": {
+            "identifier": "db-minimal",
+            "repository": "https://github.com/dbravoan/dbcms-theme-db-minimal",
+            "name": "dbCMS Minimal (Nordic Monocrom)"
+        }
+    }
+}
