@@ -1,8 +1,7 @@
 @extends('theme-db-minimal::layouts.app')
 
 @php
-    $trans = $post->translations->where('locale', app()->getLocale())->first()
-        ?? $post->translations->first();
+    $trans = public_translation($post);
     $marketCode = $currentMarket?->code ?? 'es';
     $markdownRenderer = app(\DbCms\Core\Services\Media\MarkdownRendererService::class);
     $renderedBody = $trans ? $markdownRenderer->render($trans->content) : '';
@@ -20,9 +19,9 @@
     <!-- Article Header -->
     <header class="space-y-4 border-b border-neutral-200/80 pb-8">
         <div class="flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest text-neutral-400">
-            <span>{{ $post->category?->translations->first()?->name ?? 'Minimal' }}</span>
+            <span>{{ public_translation($post->category)?->name ?? 'Minimal' }}</span>
             <span>&bull;</span>
-            <span>{{ $post->published_at ? $post->published_at->format('d M, Y') : now()->format('d M, Y') }}</span>
+            <span>{{ ($post->published_at ?? now())->copy()->locale(app()->getLocale())->isoFormat('LL') }}</span>
             <span>&bull;</span>
             <span>{{ $post->reading_time_minutes }}m</span>
         </div>

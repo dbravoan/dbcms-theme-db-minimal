@@ -209,7 +209,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 font-mono text-xs">
                 @foreach($relatedProducts as $rel)
                     @php
-                        $relTrans = $rel->translations->where('locale', $currentLocale)->first();
+                        $relTrans = public_translation($rel, $currentLocale, $currentMarket ?? null);
                         $shopPrefix = app(\DbCms\Core\Contracts\Services\LocalizationServiceInterface::class)->getModulePrefix('shop', $currentLocale) ?: 'shop';
                         $relUrl = app(\DbCms\Core\Contracts\Services\LocalizationServiceInterface::class)->url("/{$shopPrefix}/{$relTrans?->slug}", $currentMarket);
                     @endphp

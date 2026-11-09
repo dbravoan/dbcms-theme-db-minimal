@@ -4,7 +4,7 @@
     "description": "Estética minimalista escandinava con líneas limpias, máxima legibilidad, paleta monocromática y generoso espacio negativo.",
     "license": "MIT",
     "require": {
-        "dbravoan/dbcms-core": "^4.0"
+        "dbravoan/dbcms-core": "^1.0"
     },
     "extra": {
         "dbcms": {

@@ -44,7 +44,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse($products as $prod)
             @php
-                $trans = $prod->translations->where('locale', $currentLocale)->first();
+                $trans = public_translation($prod, $currentLocale, $currentMarket ?? null);
                 $shopPrefix = app(\DbCms\Core\Contracts\Services\LocalizationServiceInterface::class)->getModulePrefix('shop', $currentLocale) ?: 'shop';
                 $detailUrl = app(\DbCms\Core\Contracts\Services\LocalizationServiceInterface::class)->url("/{$shopPrefix}/{$trans?->slug}", $currentMarket);
             @endphp

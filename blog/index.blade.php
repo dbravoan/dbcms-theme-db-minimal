@@ -56,7 +56,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse($posts as $post)
             @php
-                $trans = $post->translations->where('locale', app()->getLocale())->first() ?? $post->translations->first();
+                $trans = public_translation($post);
             @endphp
             @if($trans)
                 <article class="minimal-card flex flex-col justify-between overflow-hidden group hover:border-neutral-400 transition-colors">
@@ -78,7 +78,7 @@
                         <!-- Card Content -->
                         <div class="p-6 space-y-3">
                             <div class="text-[10px] text-neutral-400 font-mono uppercase tracking-widest flex items-center gap-2">
-                                <span>{{ $post->published_at ? $post->published_at->format('d M, Y') : now()->format('d M, Y') }}</span>
+                                <span>{{ ($post->published_at ?? now())->copy()->locale(app()->getLocale())->isoFormat('LL') }}</span>
                                 <span>&bull;</span>
                                 <span>{{ $post->author->name ?? 'Studio' }}</span>
                             </div>

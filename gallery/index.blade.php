@@ -28,7 +28,7 @@
 
         @forelse($galleries as $gal)
             @php
-                $trans = $gal->translations->where('locale', app()->getLocale())->first() ?? $gal->translations->first();
+                $trans = public_translation($gal);
                 $firstItem = $gal->items->first();
                 $albumUrl = $localization->url("/{$galPrefix}/" . ($trans->slug ?? $gal->slug), $currentMarket);
             @endphp

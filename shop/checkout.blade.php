@@ -100,7 +100,7 @@
                 @foreach($items as $item)
                     @php
                         $p = $item['product'];
-                        $trans = $p->translations->where('locale', $currentLocale)->first();
+                        $trans = public_translation($p, $currentLocale, $currentMarket ?? null);
                     @endphp
                     <div class="flex items-center justify-between text-xs">
                         <div class="truncate mr-2 font-sans">

@@ -1,4 +1,4 @@
-@extends('theme-db-minimal::layouts.app')
+@extends($layout ?? 'theme-db-minimal::layouts.app')
 
 @section('title', $translation->meta_title ?? $translation->title ?? __('Página'))
 @section('meta_description', $translation->meta_description ?? '')
