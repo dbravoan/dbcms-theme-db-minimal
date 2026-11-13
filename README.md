@@ -6,7 +6,7 @@
 
 ## Requisitos y dependencias
 
-- `dbravoan/dbcms-core` `^1.0`
+- `dbravoan/dbcms-core` `^1.2`
 
 ## Instalación y activación
 

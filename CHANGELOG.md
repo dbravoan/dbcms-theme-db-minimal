@@ -7,6 +7,14 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ## [Sin publicar]
 
+## [1.1.0] - 2026-11-13
+
+### Añadido
+
+- Región de contenido compartida: los bloques raíz pueden ocupar el ancho de la ventana sin alterar los anchos, márgenes ni espaciados predeterminados del tema.
+- Punto compartido de overlays para contribuciones opcionales y marca de previsualización sin acciones públicas.
+
+
 ## [1.0.1] - 2026-11-12
 
 ### Corregido
